@@ -27,9 +27,9 @@ namespace e_LED
             while (menu != 's')
 
             {
-                Console.WriteLine(" 1.-encender luz roja ");
-                Console.WriteLine(" 2.-encender el amarilla ");
-                Console.WriteLine(" 3.-encender el azul ");
+                Console.WriteLine(" 1.-encender luz verde ");
+                Console.WriteLine(" 2.-encender luz amarilla ");
+                Console.WriteLine(" 3.-encender luz roja "); 
 
                 op = int.Parse(Console.ReadLine());
 
@@ -39,10 +39,10 @@ namespace e_LED
                     if (Arduino.IsOpen)
                     {
                         Console.WriteLine("com abierto");
-                        byte[] data = Encoding.ASCII.GetBytes("R");
+                        byte[] data = Encoding.ASCII.GetBytes("Ve");
                         Arduino.Write(data, 0, data.Length);
 
-                        Arduino.Write("a");
+                        Arduino.Write("Vp");
                     }
 
                     else
@@ -56,10 +56,10 @@ namespace e_LED
                     if (Arduino.IsOpen)
                     {
                         Console.WriteLine("com abierto");
-                        byte[] data = Encoding.ASCII.GetBytes("A");
+                        byte[] data = Encoding.ASCII.GetBytes("Ae");
                         Arduino.Write(data, 0, data.Length);
 
-                        Arduino.Write("a");
+                        Arduino.Write("Ap");
                     }
 
                     else
@@ -73,10 +73,10 @@ namespace e_LED
                     if (Arduino.IsOpen)
                     {
                         Console.WriteLine("com abierto");
-                        byte[] data = Encoding.ASCII.GetBytes("V");
+                        byte[] data = Encoding.ASCII.GetBytes("Re");
                         Arduino.Write(data, 0, data.Length);
 
-                        Arduino.Write("a");
+                        Arduino.Write("Rp");
                     }
 
                     else
