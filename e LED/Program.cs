@@ -29,7 +29,8 @@ namespace e_LED
             {
                 Console.WriteLine(" 1.-encender luz verde ");
                 Console.WriteLine(" 2.-encender luz amarilla ");
-                Console.WriteLine(" 3.-encender luz roja "); 
+                Console.WriteLine(" 3.-encender luz roja ");
+                Console.WriteLine(" 4.-salir ");
 
                 op = int.Parse(Console.ReadLine());
 
@@ -85,6 +86,15 @@ namespace e_LED
                     }
 
                 }
+
+                else if (op == 4)
+                {
+
+                    Console.WriteLine(" desea salir [s / n] ");
+                    menu = char.Parse(Console.ReadLine());
+
+                }
+
 
                     Console.ReadKey();
             }
