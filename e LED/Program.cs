@@ -13,6 +13,9 @@ namespace e_LED
                                                                   //poner el que diga Arduino.
         static void Main(string[] args)
         {
+            char menu = 'n';
+            int op = 0;
+
             Arduino.Parity = Parity.None;
             Arduino.StopBits = StopBits.One;
             Arduino.DataBits = 8;
@@ -21,21 +24,70 @@ namespace e_LED
 
             Arduino.Open();
 
-            if (Arduino.IsOpen)
+            while (menu != 's')
+
             {
-                Console.WriteLine("com abierto");
-                byte[] data = Encoding.ASCII.GetBytes("e");
-                Arduino.Write(data, 0, data.Length);
+                Console.WriteLine(" 1.-encender luz roja ");
+                Console.WriteLine(" 2.-encender el amarilla ");
+                Console.WriteLine(" 3.-encender el azul ");
 
-                Arduino.Write("a");
+                op = int.Parse(Console.ReadLine());
+
+                if (op == 1)
+
+                {
+                    if (Arduino.IsOpen)
+                    {
+                        Console.WriteLine("com abierto");
+                        byte[] data = Encoding.ASCII.GetBytes("R");
+                        Arduino.Write(data, 0, data.Length);
+
+                        Arduino.Write("a");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("com cerrado");
+                    }
+                }
+
+                else if (op == 2)
+                {
+                    if (Arduino.IsOpen)
+                    {
+                        Console.WriteLine("com abierto");
+                        byte[] data = Encoding.ASCII.GetBytes("A");
+                        Arduino.Write(data, 0, data.Length);
+
+                        Arduino.Write("a");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("com cerrado");
+                    }
+                }
+
+                else if (op == 3)
+                {
+                    if (Arduino.IsOpen)
+                    {
+                        Console.WriteLine("com abierto");
+                        byte[] data = Encoding.ASCII.GetBytes("V");
+                        Arduino.Write(data, 0, data.Length);
+
+                        Arduino.Write("a");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("com cerrado");
+                    }
+
+                }
+
+                    Console.ReadKey();
             }
-
-            else 
-            {
-                Console.WriteLine("com cerrado");
-            }
-
-            Console.ReadKey();
         }
     }
 }
