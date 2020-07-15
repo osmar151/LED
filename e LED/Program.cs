@@ -40,7 +40,7 @@ namespace e_LED
                 Console.WriteLine(" 3.-encender luz roja ");
                 Console.WriteLine(" 4.-salir ");
                 Console.WriteLine(" \\ n ---------------------------------- \\ n ");
-                Console.WriteLine(" seleccione la opcion que desea ejecutar: ");
+                Console.WriteLine(" Igrese el numero de la opcion que desea ejecutar: ");
 
                 op = int.Parse(Console.ReadLine());
 
