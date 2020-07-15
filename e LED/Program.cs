@@ -12,7 +12,7 @@ namespace e_LED
         //Link de programa de timkercad: https://www.tinkercad.com/things/fhzcfgRpY3h-copy-of-proyecto/editel?sharecode=jDVVtDaxlcMv5CfS0_lS0vUen1Q22n_CXrW8Jvmdwhs
 
         static char[,] datos = new char[3, 3];
-        static SerialPort Arduino = new SerialPort("COM5", 9600); // cambiar COM5 por puerto de arduino predeterminado
+        static SerialPort Arduino = new SerialPort("COM5", 9600); 
                                                                  
         static void Main(string[] args)
         {
@@ -55,6 +55,7 @@ namespace e_LED
                         Arduino.Write(data, 0, data.Length);
 
                         Console.WriteLine(" ingrese: 'V' para encender la luz verde");
+
                         Console.WriteLine(" ingrese: 'A' para apagar la luz verde");
 
                         Arduino.Write("A");
@@ -77,6 +78,7 @@ namespace e_LED
                         Arduino.Write(data, 0, data.Length);
 
                         Console.WriteLine(" ingrese: 'B' para encender la luz amarilla");
+
                         Console.WriteLine(" ingrese: 'C' para apagar la luz amarila");
 
                         Arduino.Write("C");
@@ -99,6 +101,7 @@ namespace e_LED
                         Arduino.Write(data, 0, data.Length);
 
                         Console.WriteLine(" ingrese: 'D' para encender la luz roja");
+
                         Console.WriteLine(" ingrese: 'E' para apagar la luz roja");
 
                         Arduino.Write("E");
