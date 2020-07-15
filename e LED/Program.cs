@@ -27,17 +27,16 @@ namespace e_LED
 
             Arduino.Open();
 
-            Console.WriteLine(" Bienvenido, este programa fue creado para manipular las luces de un semaforo," +
-                " donde el usuario puede seleccionar que luz desea encender "); 
+          
 
             while (menu != 's')
 
             {
                 Console.WriteLine(" \\ n ---------------------------------- \\ n ");
                 Console.WriteLine(" _______________________________________________________________ ");
-                Console.WriteLine(" 1.-encender luz verde ");
-                Console.WriteLine(" 2.-encender luz amarilla ");
-                Console.WriteLine(" 3.-encender luz roja ");
+                Console.WriteLine(" 1.-encender LED verde ");
+                Console.WriteLine(" 2.-encender LED amarillo ");
+                Console.WriteLine(" 3.-encender LED rojo ");
                 Console.WriteLine(" 4.-salir ");
                 Console.WriteLine(" \\ n ---------------------------------- \\ n ");
                 Console.WriteLine(" Igrese el numero de la opcion que desea ejecutar: ");
@@ -54,9 +53,9 @@ namespace e_LED
                         byte[] data = Encoding.ASCII.GetBytes("V");
                         Arduino.Write(data, 0, data.Length);
 
-                        Console.WriteLine(" ingrese: 'V' para encender la luz verde");
+                        Console.WriteLine(" ingrese: 'V' para encender el LED verde");
 
-                        Console.WriteLine(" ingrese: 'A' para apagar la luz verde");
+                        Console.WriteLine(" ingrese: 'A' para apagar el LED verde");
 
                         Arduino.Write("A");
                     }
@@ -77,9 +76,9 @@ namespace e_LED
                         byte[] data = Encoding.ASCII.GetBytes("B");
                         Arduino.Write(data, 0, data.Length);
 
-                        Console.WriteLine(" ingrese: 'B' para encender la luz amarilla");
+                        Console.WriteLine(" ingrese: 'B' para encender el LED amarillo");
 
-                        Console.WriteLine(" ingrese: 'C' para apagar la luz amarila");
+                        Console.WriteLine(" ingrese: 'C' para apagar el LED amarilo");
 
                         Arduino.Write("C");
                     }
@@ -100,9 +99,9 @@ namespace e_LED
                         byte[] data = Encoding.ASCII.GetBytes("D");
                         Arduino.Write(data, 0, data.Length);
 
-                        Console.WriteLine(" ingrese: 'D' para encender la luz roja");
+                        Console.WriteLine(" ingrese: 'D' para encender el LED rojo");
 
-                        Console.WriteLine(" ingrese: 'E' para apagar la luz roja");
+                        Console.WriteLine(" ingrese: 'E' para apagar el LED rojo");
 
                         Arduino.Write("E");
                     }
